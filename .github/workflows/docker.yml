@@ -22,7 +22,6 @@ jobs:
             curl -L https://github.com/lacework/lacework-vulnerability-scanner/releases/latest/download/lw-scanner-linux-amd64 -o lw-scanner
             chmod +x lw-scanner
             ./lw-scanner image evaluate myimage v1.0 --save --policy --fail-on-violation-exit-code 1
-            echo $?
            env:
              LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT_NAME }}
              LW_ACCESS_TOKEN: ${{ secrets.LW_ACCESS_TOKEN }}
