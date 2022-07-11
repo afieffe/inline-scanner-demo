@@ -37,5 +37,10 @@ jobs:
              htmlFile: ./report_vuln.html
              outputFile: ./report_vuln.pdf
              pdfOptions: '{"format": "A4", "pageRanges": "1"}'
+             
+         - name: Upload a Build Artifact
+           uses: actions/upload-artifact@v3.1.0
+           with:
+             path: ./report_vuln.pdf
        
         
