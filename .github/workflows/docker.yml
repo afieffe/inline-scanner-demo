@@ -29,6 +29,7 @@ jobs:
             -H "Authorization: token $GITHUB_TOKEN" \
             --data '{ "body": "blah blah" }'
            env:
+             URL: ${{ github.event.issue.comments_url }}
              GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
              LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT_NAME }}
              LW_ACCESS_TOKEN: ${{ secrets.LW_ACCESS_TOKEN }}
