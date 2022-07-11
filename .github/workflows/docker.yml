@@ -22,7 +22,12 @@ jobs:
             curl -L https://github.com/lacework/lacework-vulnerability-scanner/releases/latest/download/lw-scanner-linux-amd64 -o lw-scanner
             chmod +x lw-scanner
             ./lw-scanner image evaluate inline_scanner_test v1.0
-            gh pr comment --body "Hi from GitHub CLI"
+            curl \
+            -X POST \
+            $URL \
+            -H "Content-Type: application/json" \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            --data '{ "body": "blah blah" }'
            env:
              GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
              LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT_NAME }}
