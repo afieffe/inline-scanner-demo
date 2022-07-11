@@ -30,6 +30,6 @@ jobs:
             --data '{ "body": "blah blah" }'
            env:
              URL: ${{ github.event.pull_request.comments_url }}
-             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
              LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT_NAME }}
              LW_ACCESS_TOKEN: ${{ secrets.LW_ACCESS_TOKEN }}
