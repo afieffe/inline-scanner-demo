@@ -24,5 +24,6 @@ jobs:
             ./lw-scanner image evaluate inline_scanner_test v1.0
             gh pr comment 13 --body "Hi from GitHub CLI"
            env:
+             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
              LW_ACCOUNT_NAME: ${{ secrets.LW_ACCOUNT_NAME }}
              LW_ACCESS_TOKEN: ${{ secrets.LW_ACCESS_TOKEN }}
