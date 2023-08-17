@@ -22,7 +22,7 @@ jobs:
            run: | 
             curl -L https://github.com/lacework/lacework-vulnerability-scanner/releases/latest/download/lw-scanner-linux-amd64 -o lw-scanner
             chmod +x lw-scanner
-            ./lw-scanner image evaluate inline_scanner_test v1.0 --html --html-file report_vuln.html
+            ./lw-scanner image evaluate inline_scanner_test v1.0 --html --html-file report_vuln.html --save
             ls .
            env:
              URL: ${{ github.event.pull_request.comments_url }}
